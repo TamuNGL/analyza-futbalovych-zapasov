@@ -106,6 +106,7 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
  <img src="images/boxOdds.png" alt="Image 1" width="250"/>
   <img src="images/histOddsHome.jpg" alt="Image 2" width="250" />
   <img src="images/histOddsAway.jpg" alt="Image 3" width="250" />
+ <img src="images/histOddsDraw.jpg" alt="Image 3" width="250" />
 </p>
 
 
