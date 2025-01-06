@@ -80,5 +80,6 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
 | 55    | **A_Yellow_Cards**       | Počet žltých kariet udelených hráčom hosťujúceho tímu.                                     |
 | 56    | **Game Link**            | Hyperlink alebo odkaz na podrobné informácie o zápase.                                     |
 
-##EXPLORATIVNA ANALYZA
+## EXPLORATIVNA ANALYZA
+
 ![image](https://github.com/user-attachments/assets/ec944e5a-54e3-4c38-9c73-117e001a9385)
