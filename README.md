@@ -88,7 +88,7 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
   <img src="images/histAwayAttacks.png" alt="Image 3" width="250" />
 </p>
 
-<p>
+<p align="center>
  <img src="images/boxDangerous.png" alt="Image 1" width="250" />
   <img src="images/histHomeDangerous.png" alt="Image 2" width="250" />
   <img src="images/histAwayDangerous.png" alt="Image 3" width="250" />
