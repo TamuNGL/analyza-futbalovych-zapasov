@@ -83,7 +83,7 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
 ## EXPLORATIVNA ANALYZA
 
 <p align="center">
-  <img src="images/boxAttacks.png" alt="Image 1" width="400" />
-  <img src="images/histHomeAttacks.png" alt="Image 2" width="400" />
-  <img src="images/histAwayAttacks.png" alt="Image 3" width="400" />
+  <img src="images/boxAttacks.png" alt="Image 1" width="300" />
+  <img src="images/histHomeAttacks.png" alt="Image 2" width="300" />
+  <img src="images/histAwayAttacks.png" alt="Image 3" width="300" />
 </p>
