@@ -93,8 +93,17 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
   <img src="images/histHomeDangerous.png" alt="Image 2" width="250" />
   <img src="images/histAwayDangerous.png" alt="Image 3" width="250" />
 </p>
+
+
 <p align="center">
- <img src="images/boxBallPossession.png" alt="Image 1" width="250"/>
-  <img src="images/histHomePossession.png" alt="Image 2" width="250" />
-  <img src="images/histAwayPossession.png" alt="Image 3" width="250" />
+ <img src="images/boxBallPossession.jpg" alt="Image 1" width="250"/>
+  <img src="images/histHomePossession.jpg" alt="Image 2" width="250" />
+  <img src="images/histAwayPossession.jpg" alt="Image 3" width="250" />
+</p>
+
+
+<p align="center">
+ <img src="images/boxOdds.png" alt="Image 1" width="250"/>
+  <img src="images/histHomeOdds.png" alt="Image 2" width="250" />
+  <img src="images/histAwayOdds.png" alt="Image 3" width="250" />
 </p>
