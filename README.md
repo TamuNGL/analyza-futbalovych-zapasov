@@ -109,34 +109,34 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
  <img src="images/histDrawOdds.jpg" alt="Image 3" width="200" />
 </p>
 
-<p>
+<p align="center">
  <img src="images/corrmapBig.jpg" alt="Image 1" width="400"/>
  <img src="images/corrmapSmall.jpg" alt="Image 1" width="400"/>
 </p>
 
-<p>
+<p align="center">
  <img src="images/corrmapBig.jpg" alt="Image 1" width="400"/>
  <img src="images/corrmapSmall.jpg" alt="Image 1" width="400"/>
 </p>
 
-<p>
+<p align="center">
  <img src="images/dendrogram.jpg" alt="Image 1" width="800"/>
 </p>
 
-<p>
+<p align="center">
  <img src="images/performance.jpg" alt="Image 1" width="800"/>
 </p>
 
-<p>
+<p align="center">
  <img src="images/tree.jpg" alt="Image 1" width="800"/>
 </p>
 
-<p>
+<p align="center">
  <img src="images/bolton.jpg" alt="Image 1" width="400"/>
  <img src="images/sunderland.jpg" alt="Image 1" width="400"/>
 </p>
 
-<p>
+<p align="center">
  <img src="images/15Fix.jpg" alt="Image 1" width="800"/>
 </p>
 
