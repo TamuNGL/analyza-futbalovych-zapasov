@@ -251,7 +251,7 @@ Z dát si najskôr vyfiltrujeme hry, ktoré nemali vyrovnané skóre v 15 minút
 Hypotézu testujeme pomocou Chí-kvadrát testu s alpha = 0.05. P-hodnota vyšla 0.0, takže H0 zamietame a môžme potvrdiť, že skóre v 15 minúte má veľmi výrazný vplyv na konečný výsledok.
 
 <p align="center">
- <img src="images/15Fix.jpg" alt="Image 1" width="500"/>
+ <img src="images/15Fix.jpg" alt="Image 1" width="800"/>
 </p>
 
 Testujeme, pre ktoré tímy existuje signifikantná závislosť medzi rok a počtami výhier/prehier.
