@@ -119,6 +119,20 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
  <img src="images/corrmapSmall.png" alt="Image 1" width="400"/>
 </p>
 
+<p>
+ <img src="images/dendrogram.jpg" alt="Image 1" width="600"/>
+</p>
+
+<p>
+ <img src="images/performance.jpg" alt="Image 1" width="600"/>
+</p>
+
+<p>
+ <img src="images/tree.jpg" alt="Image 1" width="600"/>
+</p>
+
+
+
 
 
 
