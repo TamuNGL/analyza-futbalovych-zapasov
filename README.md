@@ -19,11 +19,7 @@ Otázky, ktoré sme si pri analýze kládli:
 
 
 ## Premenné vyskytujúce nachádzajúce sa v našom dátovom súbore
-
-Vysvetlenie niektorých skratiek
-- H - home
-- A - away
-- HT - half-time
+Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dáta
 
 | **#** | **Parameter**            | **Popis**                                                                                   |
 |-------|--------------------------|---------------------------------------------------------------------------------------------|
@@ -84,3 +80,5 @@ Vysvetlenie niektorých skratiek
 | 55    | **A_Yellow_Cards**       | Počet žltých kariet udelených hráčom hosťujúceho tímu.                                     |
 | 56    | **Game Link**            | Hyperlink alebo odkaz na podrobné informácie o zápase.                                     |
 
+##EXPLORATIVNA ANALYZA
+![image](https://github.com/user-attachments/assets/ec944e5a-54e3-4c38-9c73-117e001a9385)
