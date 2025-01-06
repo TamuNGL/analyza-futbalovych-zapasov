@@ -235,17 +235,45 @@ Tímy, ktoré sú si najviac podobné, sa spájajú v nižších úrovniach dend
  <img src="images/dendrogram.jpg" alt="Image 1" width="800"/>
 </p>
 
+## Testovanie hypotéz
 
+V tejto časti testujeme hypotézu, či existuje nejaká signifikantná závislosť medzi tým, kto vedie v prvých 15 minútach hry a finálnym skóre zápasu.
 
+- H0: neexistuje súvislosť medzi týmito dvomi premennými
+- H1: existuje signifikantná súvislosť
+
+Z dát si najskôr vyfiltrujeme hry, ktoré nemali vyrovnané skóre v 15 minúte a ani neskončili remízou. Následne zostrojíme kontingenčnú tabuľku ktorá obsahuje počty pre jednotlivé stavy:
+* 15 minúte vyhrával tím 'Home' a vyhral
+* 15 minúte vyhrával tím 'Home' a vyhral tím 'Away'
+* 15 minúte vyhrával tím 'Away' a vyhral
+* 15 minúte vyhrával tím 'Away' a vyhral tím 'Home'
+
+Hypotézu testujeme pomocou Chí-kvadrát testu s alpha = 0.05. P-hodnota vyšla 0.0, takže H0 zamietame a môžme potvrdiť, že skóre v 15 minúte má veľmi výrazný vplyv na konečný výsledok.
 
 <p align="center">
- <img src="images/tree.jpg" alt="Image 1" width="800"/>
+ <img src="images/15Fix.jpg" alt="Image 1" width="500"/>
 </p>
+
+Testujeme, pre ktoré tímy existuje signifikantná závislosť medzi rok a počtami výhier/prehier.
+
+- H0: neexistuje signifikantná závislosť medzi rokom a počom výhier
+- H1: existuje závislosť medzi týmito premennými
+
+Pre každý tím osobitne zostrojím kontingenčnú tabuľkú, ktorá teraz pozostáva z riadkov, kde sú roky a stĺpce udávajú počet výrier/prehier a znova použijeme Chí-kvadrát test. Ďalej sa môžme bližšie pozrieť na tímy, ktoré majú najviac odohraných zápasov a ktorým vyšla extrémne malá p-hodnota < 0.001, sem patrí Bolton, Sunderland a Toulouse. Po vizualizácií ich skóre pomocou bar grafov si môžme všimnúť, že pre Sunderland a Toulouse platí, že do roku 2019/2020 zvykli väčšinu svojich zápasov prehrávať, no potom vidíme výrazné zlepšenie. Pre Bolton je výrazné zhoršenie medzi rokmi 2015-2019.
 
 <p align="center">
  <img src="images/bolton.jpg" alt="Image 1" width="400"/>
  <img src="images/sunderland.jpg" alt="Image 1" width="400"/>
 </p>
+
+## Rozhodovacie stromy a lesy
+V tejto časti sa snaíme predikovať výsledok zápasu pomocou rozhodovacieho stromu. Základný dataset obsahuje ako premenné počty jednotlivých udalostí, ako napríklad počet útokov, vhadzovaní, faulov za jednotlivé tímy. Tieto premenné trasformujeme na relatívny počet, teda pomer medzi domácim tímom a hosťami. Následne využijeme hodnoty jedného tímu ako vstupy pre model rozhodovacieho stromu. Najlepšie predikcie dostávame pri maximálnej hĺbke 5, pri vyššej dochádza k pretrénovaniu a model horšie predikuje na validačnej vzorke.
+
+<p align="center">
+ <img src="images/tree.jpg" alt="Image 1" width="800"/>
+</p>
+
+Výsledné predikcie na validačnej vzorke dosahujú úspešnosť približne 60-65%. Táto úspešnosť sa mierne zvýši, keď namiesto jednoduchého rozhodovacieho stromu použijeme metódu náhodných lesov. Náhodné lesy, kombinujú viacero rozhodovacích stromov, čo pomáha zlepšiť robustnosť modelu a znižuje riziko pretrénovania.
 
 <p align="center">
  <img src="images/pca2D.jpg" alt="Image 1" width="400"/>
@@ -254,6 +282,15 @@ Tímy, ktoré sú si najviac podobné, sa spájajú v nižších úrovniach dend
 
 
 ## Záver
+
+* Ktoré parametre sú najdôležitejšie pri predikovaní výsledku zápasu?
+* Vieme iba na základe parametrov zápasu určiť kvalitu ligy?
+* Sú predzápasové kurzy dobrým indikátorom výhry tímu?
+* Ktoré tímy sú si výkonmi v zápasoch podobné?
+* Má tím, ktorý vyhráva po prvých 15 minútach signifikantne vyššiu šancu na výhru?
+* Ktoré tímy majú ofenzívny, obranný alebo vyvážený štýl hry?
+* Majú tímy lepšie parametre hry, ak hrajú na domácom ihrisku?
+* Ktoré tímy nehrajú rovnako dobre počas všetkých období, ale ich úspešnosť závisí od roku?
 
 ### Odpovede na otázky a výsledky analýzy
 
@@ -268,7 +305,7 @@ Z našej analýzy sme zistili, že uvedené predikčné modely predikujú výsle
 
 Je potrebné poznamenať, že pre správnosť porovnávania jednotivých modelov, boli modely trénované pomocou rovnakých parametrov. Zároveň musíme, dodať, že sme predikčné modely trénovali aj vyhodnocovali na dátach zo zápasov, ktoré sa neskončili remízou. Z výsledkov je očakávané, že najlepšie budú výsledky zápasov predikovať neurónové siete a najhoršie predikčné lesy.
 
-Pomocou pca sme boli schopní porovnávať výkonnosti jednotlivých tímov a na základe týchto poznatkov vypozorovať, ktoré z európskych líg majú najvyššiu kvalitu. Potom sme tímy jednotlivých líg hierarchických zhlukovaním vykreslili v dendrograme.
+Pomocou pca sme boli schopný porovnávať výkonnosti jednotlivých tímov a na základe týchto poznatkov vypozorovať, ktoré z európskych líg majú najvyššiu kvalitu. Potom sme tímy jednotlivých líg hierarchických zhlukovaním vykreslili v dendrograme.
 
 Okrem toho sme využili aj zhlukovaciu metódu k-means, ktorá tímy rozdelila do skupín, podľa štýlu hry na ofenzívne a dominantné tímy, obranné a slabšie tímy a vyvážené a disciplinované tímy.
 
