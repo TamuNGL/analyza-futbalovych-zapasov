@@ -276,7 +276,7 @@ Pre každý tím osobitne zostrojím kontingenčnú tabuľkú, ktorá teraz pozo
 V tejto časti sa snaíme predikovať výsledok zápasu pomocou rozhodovacieho stromu. Základný dataset obsahuje ako premenné počty jednotlivých udalostí, ako napríklad počet útokov, vhadzovaní, faulov za jednotlivé tímy. Tieto premenné trasformujeme na relatívny počet, teda pomer medzi domácim tímom a hosťami. Následne využijeme hodnoty jedného tímu ako vstupy pre model rozhodovacieho stromu. Najlepšie predikcie dostávame pri maximálnej hĺbke 5, pri vyššej dochádza k pretrénovaniu a model horšie predikuje na validačnej vzorke.
 
 <p align="center">
- <img src="images/tree2.jpg" alt="Image 1" width="800"/>
+ <img src="images/tree2.png" alt="Image 1" width="800"/>
 </p>
 
 Výsledné predikcie na validačnej vzorke dosahujú úspešnosť približne 60-65%. Táto úspešnosť sa mierne zvýši, keď namiesto jednoduchého rozhodovacieho stromu použijeme metódu náhodných lesov. Náhodné lesy, kombinujú viacero rozhodovacích stromov, čo pomáha zlepšiť robustnosť modelu a znižuje riziko pretrénovania.
