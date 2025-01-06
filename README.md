@@ -342,6 +342,19 @@ Táto dokumentácia opisuje postup pri tréningu, validácii a vyhodnotení mode
 - **Metriky:**
     - Tabuľka zobrazuje hodnoty `Precision`, `Recall` a `F1 Score` pre každú triedu.
 
+<p align="center">
+ <img src="images/neural_conf_matrix.png" alt="Neural Confusion Matrix" width="800"/>
+</p>
+
+Final Test Accuracy: 72.77%
+| Class | Precision | Recall | F1 Score |
+|---|----------|----------|----------|
+| 0 |	0.751069 |	0.798182 |	0.773909 |
+| 1 |	0.689510 |	0.628827 |	0.657772 |
+
+
+
+
 ## Analýza tímových štatistík pomocou K-Means zhlukovania
 
 ### 1. Úvod
