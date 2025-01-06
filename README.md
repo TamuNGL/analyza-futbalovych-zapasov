@@ -1,4 +1,7 @@
-# analyza-futbalovych-zapasov
+# Analýza futbalových zápasov
+
+[Odkaz na jupyter notebook](https://colab.research.google.com/drive/1UKKf9nj5b5vMxMsCNglY55Mbo_oR52bD?usp=sharing)
+
 ## Úvod
 
 V našej práci sme sa zamerali na analýzu dát, ktoré obsahujú informácie o zápasoch hraných v 18-tich európskych ligách. Naše dáta pochádzajú z webstránky [Kaggle](https://www.kaggle.com/datasets/bastekforever/complete-football-data-89000-matches-18-leagues/data)
