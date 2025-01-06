@@ -433,6 +433,133 @@ Na vizualizáciu zhlukov sa použije redukcia dimenzionality metódou PCA (Princ
  <img src="images/pca3D.jpg" alt="Image 1" width="400"/>
 </p>
 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>avg_home_score</th>
+      <th>avg_home_fouls</th>
+      <th>avg_home_offsides</th>
+      <th>avg_home_ball_possession</th>
+      <th>avg_home_goal_attempts</th>
+      <th>avg_home_shots_on_goal</th>
+      <th>avg_home_shots_off_goal</th>
+      <th>avg_home_corner_kicks</th>
+      <th>avg_home_goalkeeper_saves</th>
+      <th>avg_home_yellow_cards</th>
+      <th>avg_away_score</th>
+      <th>avg_away_fouls</th>
+      <th>avg_away_offsides</th>
+      <th>avg_away_ball_possession</th>
+      <th>avg_away_goal_attempts</th>
+      <th>avg_away_shots_on_goal</th>
+      <th>avg_away_shots_off_goal</th>
+      <th>avg_away_corner_kicks</th>
+      <th>avg_away_goalkeeper_saves</th>
+      <th>avg_away_yellow_cards</th>
+    </tr>
+    <tr>
+      <th>Cluster</th>
+      <th>Cluster_Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <th>Cluster 1</th>
+      <td>1.769433</td>
+      <td>13.306793</td>
+      <td>2.072261</td>
+      <td>53.883129</td>
+      <td>14.806295</td>
+      <td>5.602505</td>
+      <td>6.777261</td>
+      <td>5.845934</td>
+      <td>2.912376</td>
+      <td>1.900458</td>
+      <td>1.423962</td>
+      <td>13.696680</td>
+      <td>1.920722</td>
+      <td>51.649608</td>
+      <td>12.543389</td>
+      <td>4.750484</td>
+      <td>5.708857</td>
+      <td>4.977171</td>
+      <td>3.333655</td>
+      <td>2.244705</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <th>Cluster 2</th>
+      <td>1.207560</td>
+      <td>14.836685</td>
+      <td>2.090412</td>
+      <td>49.363250</td>
+      <td>11.783992</td>
+      <td>4.223471</td>
+      <td>5.535793</td>
+      <td>5.028570</td>
+      <td>2.890001</td>
+      <td>2.340078</td>
+      <td>0.979989</td>
+      <td>15.071733</td>
+      <td>1.870333</td>
+      <td>46.626723</td>
+      <td>9.877987</td>
+      <td>3.486858</td>
+      <td>4.625147</td>
+      <td>4.187138</td>
+      <td>3.453502</td>
+      <td>2.633459</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>Cluster 3</th>
+      <td>1.309720</td>
+      <td>11.699154</td>
+      <td>1.758153</td>
+      <td>48.899490</td>
+      <td>12.198425</td>
+      <td>4.194770</td>
+      <td>5.070497</td>
+      <td>4.999259</td>
+      <td>2.728296</td>
+      <td>1.686928</td>
+      <td>1.073060</td>
+      <td>11.978184</td>
+      <td>1.641283</td>
+      <td>47.276305</td>
+      <td>10.651719</td>
+      <td>3.657926</td>
+      <td>4.452607</td>
+      <td>4.410239</td>
+      <td>3.219620</td>
+      <td>1.965226</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Interpretácia klasifikácie zhlukov
 
 ### Cluster 1: Ofenzívne a dominantné tímy
@@ -451,7 +578,7 @@ Na vizualizáciu zhlukov sa použije redukcia dimenzionality metódou PCA (Princ
 - **Záver**: Tímy sú vyvážené, neexcelujú v žiadnej oblasti.
 
 ## Záver
-
+Naša analýza poskytla podrovný a komplexný pohľad na predikciu výsledkov futbalových zápasov a výkonnosť tímov v európskych ligách. Podarilo sa nám odpovedať na väčšinu otázok a dosiahnuť množstvo zaujímavých poznatkov.
 * Ktoré parametre sú najdôležitejšie pri predikovaní výsledku zápasu?
 * Vieme iba na základe parametrov zápasu určiť kvalitu ligy?
 * Sú predzápasové kurzy dobrým indikátorom výhry tímu?
