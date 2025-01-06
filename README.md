@@ -136,6 +136,15 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
  <img src="images/sunderland.jpg" alt="Image 1" width="400"/>
 </p>
 
+<p>
+ <img src="images/15Fix.jpg" alt="Image 1" width="800"/>
+</p>
+
+<p>
+ <img src="images/pca2D.jpg" alt="Image 1" width="400"/>
+ <img src="images/pca3D.jpg" alt="Image 1" width="400"/>
+</p>
+
 
 
 
