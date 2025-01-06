@@ -255,15 +255,6 @@ Tímy, ktoré sú si najviac podobné, sa spájajú v nižších úrovniach dend
 
 ## Záver
 
-* Ktoré parametre sú najdôležitejšie pri predikovaní výsledku zápasu?
-* Vieme iba na základe parametrov zápasu určiť kvalitu ligy?
-* Sú predzápasové kurzy dobrým indikátorom výhry tímu?
-* Ktoré tímy sú si výkonmi v zápasoch podobné?
-* Má tím, ktorý vyhráva po prvých 15 minútach signifikantne vyššiu šancu na výhru?
-* Ktoré tímy majú ofenzívny, obranný alebo vyvážený štýl hry?
-* Majú tímy lepšie parametre hry, ak hrajú na domácom ihrisku?
-* Ktoré tímy nehrajú rovnako dobre počas všetkých období, ale ich úspešnosť závisí od roku?
-
 ### Odpovede na otázky a výsledky analýzy
 
 Z našej analýzy sme zistili, že uvedené predikčné modely predikujú výsledky zápasov s uvedenou presnosťou:
@@ -277,7 +268,7 @@ Z našej analýzy sme zistili, že uvedené predikčné modely predikujú výsle
 
 Je potrebné poznamenať, že pre správnosť porovnávania jednotivých modelov, boli modely trénované pomocou rovnakých parametrov. Zároveň musíme, dodať, že sme predikčné modely trénovali aj vyhodnocovali na dátach zo zápasov, ktoré sa neskončili remízou. Z výsledkov je očakávané, že najlepšie budú výsledky zápasov predikovať neurónové siete a najhoršie predikčné lesy.
 
-Pomocou pca sme boli schopný porovnávať výkonnosti jednotlivých tímov a na základe týchto poznatkov vypozorovať, ktoré z európskych líg majú najvyššiu kvalitu. Potom sme tímy jednotlivých líg hierarchických zhlukovaním vykreslili v dendrograme.
+Pomocou pca sme boli schopní porovnávať výkonnosti jednotlivých tímov a na základe týchto poznatkov vypozorovať, ktoré z európskych líg majú najvyššiu kvalitu. Potom sme tímy jednotlivých líg hierarchických zhlukovaním vykreslili v dendrograme.
 
 Okrem toho sme využili aj zhlukovaciu metódu k-means, ktorá tímy rozdelila do skupín, podľa štýlu hry na ofenzívne a dominantné tímy, obranné a slabšie tímy a vyvážené a disciplinované tímy.
 
