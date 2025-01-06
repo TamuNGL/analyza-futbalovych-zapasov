@@ -275,6 +275,73 @@ V tejto časti sa snaíme predikovať výsledok zápasu pomocou rozhodovacieho s
 
 Výsledné predikcie na validačnej vzorke dosahujú úspešnosť približne 60-65%. Táto úspešnosť sa mierne zvýši, keď namiesto jednoduchého rozhodovacieho stromu použijeme metódu náhodných lesov. Náhodné lesy, kombinujú viacero rozhodovacích stromov, čo pomáha zlepšiť robustnosť modelu a znižuje riziko pretrénovania.
 
+## Predikcia výsledkov futbalových zápasov pomocou neurónovej siete
+
+### 1. Úvod
+Táto dokumentácia opisuje postup pri tréningu, validácii a vyhodnotení modelu na binárnu predikciu futbalových výsledkov na základe štatistík zo zápasov. Predikuje sa výhra domáceho tímu alebo výhra hosťujúceho tímu (`Home -> 0`, `Away -> 1`).
+
+### 2. Nastavenie prostredia
+- **Seed pre reprodukovateľnosť:**
+    - Nastavenie seed hodnoty pre `random`, `NumPy` a `PyTorch`, aby boli výsledky reprodukovateľné.
+
+### 3. Načítanie a spracovanie dát
+1. **Načítanie dát:** Dataset vo formáte `.csv` sa načíta pomocou knižnice `pandas`.
+2. **Predspracovanie dát:**
+    - Odstránia sa riadky s hodnotou `Draw` v stĺpci `WIN`.
+    - Vypočíta sa percento chýbajúcich hodnôt pre každý stĺpec. Stĺpce s viac ako 70 % chýbajúcich hodnôt sa odstránia.
+    - Zvyšné chýbajúce hodnoty v riadkoch sa odstránia.
+3. **Zakódovanie cieľovej premennej:**
+    - Hodnoty `WIN` sa transformujú na numerické hodnoty (`Home -> 0`, `Away -> 1`).
+4. **Štandardizácia dát:**
+    - Percentuálne hodnoty sa prepočítajú na desatinné čísla.
+    - Všetky číselné hodnoty sa štandardizujú pomocou `StandardScaler`.
+5. **Rozdelenie dát:**
+    - Dáta sa rozdelia na tréningovú, validačnú a testovaciu množinu.
+
+### 4. Definícia Datasetu a DataLoaderu
+- **Vlastná trieda datasetu:**
+    - Implementuje PyTorch triedu `Dataset`, ktorá umožňuje prácu s dátami vo formáte PyTorch.
+- **DataLoadery:**
+    - Používajú sa na dávkovanie dát počas tréningu, validácie a testovania.
+    - Veľkosť dávky je nastavená na `2048`.
+
+### 5. Architektúra modelu
+- **Model:**
+    - Dve skryté vrstvy s aktiváciou ReLU a Dropout na regularizáciu.
+    - Výstupná vrstva predikuje dve triedy (`Home`, `Away`).
+- **Dropout:**
+    - Používa sa na zníženie pretrénovania modelu.
+
+### 6. Tréning a validačný cyklus
+1. **Loss a optimalizácia:**
+    - Loss: `CrossEntropyLoss` pre klasifikačné problémy.
+    - Optimalizátor: `Adam` s rýchlosťou učenia `1e-3`.
+    - Scheduler: `ReduceLROnPlateau` na dynamické znižovanie rýchlosti učenia pri stagnácii.
+2. **Tréningový cyklus:**
+    - Model sa trénuje po dávkach na tréningových dátach (mini-batch).
+    - Validácia sa vykonáva na validačnej množine po každej epoche.
+    - `Early stopping` sa použije pri stagnácii validačnej straty.
+3. **Uloženie modelu:**
+    - Najlepší model sa uloží ako `best_model.pt` podľa validačných výsledkov.
+
+### 7. Vyhodnotenie modelu
+1. **Načítanie modelu:**
+    - Načítajú sa najlepšie váhy modelu z validačnej fázy.
+2. **Predikcie:**
+    - Predikcie sa vykonajú na testovacej množine.
+3. **Výpočet metrík:**
+    - **Accuracy:** Percentuálna presnosť.
+    - **Precision, Recall, F1 Score:** Vypočítané pre každú triedu.
+4. **Confusion matica:**
+    - Vizualizuje sa normalizovaná matica správnych a nesprávnych predikcií.
+
+### 8. Vizualizácia výsledkov
+- **Confusion matica:**
+    - Zobrazuje normalizované hodnoty v percentách.
+    - Obsahuje podrobnosti o skutočných a predikovaných triedach.
+- **Metriky:**
+    - Tabuľka zobrazuje hodnoty `Precision`, `Recall` a `F1 Score` pre každú triedu.
+
 ## Analýza tímových štatistík pomocou K-Means zhlukovania
 
 ### 1. Úvod
