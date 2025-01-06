@@ -582,7 +582,7 @@ Na vizualizáciu zhlukov sa použije redukcia dimenzionality metódou PCA (Princ
 - **Záver**: Tímy sú vyvážené, neexcelujú v žiadnej oblasti.
 
 ## Záver
-Naša analýza poskytla podrovný a komplexný pohľad na predikciu výsledkov futbalových zápasov a výkonnosť tímov v európskych ligách. Podarilo sa nám odpovedať na väčšinu otázok a dosiahnuť množstvo zaujímavých poznatkov.
+Naša analýza poskytla podrobný a komplexný pohľad na predikciu výsledkov futbalových zápasov a výkonnosť tímov v európskych ligách. Podarilo sa nám odpovedať na väčšinu otázok a dosiahnuť množstvo zaujímavých poznatkov.
 * Ktoré parametre sú najdôležitejšie pri predikovaní výsledku zápasu?
 * Vieme iba na základe parametrov zápasu určiť kvalitu ligy?
 * Sú predzápasové kurzy dobrým indikátorom výhry tímu?
