@@ -4,8 +4,7 @@
 
 ## Úvod
 
-V našej práci sme sa zamerali na analýzu dát, ktoré obsahujú informácie o zápasoch hraných v 18-tich európskych ligách. Naše dáta pochádzajú z webstránky [Kaggle](https://www.kaggle.com/datasets/bastekforever/complete-football-data-89000-matches-18-leagues/data)
- .
+V našej práci sme sa zamerali na analýzu dát, ktoré obsahujú informácie o zápasoch hraných v 18-tich európskych ligách. Dáta poskytujú široké spektrum informácií o výkone tímov, štýloch hry a rôznych iných ukazovateľoch zápasov ako sú napr. stávkové kurzy.  Naše dáta pochádzajú z webstránky [Kaggle](https://www.kaggle.com/datasets/bastekforever/complete-football-data-89000-matches-18-leagues/data).
 
 Otázky, ktoré sme si pri analýze kládli:
 
@@ -22,7 +21,7 @@ Otázky, ktoré sme si pri analýze kládli:
 
 
 ## Premenné vyskytujúce nachádzajúce sa v našom dátovom súbore
-Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dáta
+Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dáta.
 
 | **#** | **Parameter**            | **Popis**                                                                                   |
 |-------|--------------------------|---------------------------------------------------------------------------------------------|
@@ -84,6 +83,8 @@ Spolu je 96 tisíc riadkov a 56 stĺpcov. Veľa riadkov obsahuje chýbajúce dá
 | 56    | **Game Link**            | Hyperlink alebo odkaz na podrobné informácie o zápase.                                     |
 
 ## Exploratívna analýza
+
+Z uvedených stĺpcov dátového súboru sme urobili exploratívnu analýzu. Pre zápasy hrané na domácom ihrisku aj na ihrisku súpera sme vykreslili odhady hustoty a boxploty pre rozličné parametre. Tieto grafy poskytujú informácie pre porovnanie týchto dvoch typov zápasov. 
 
 <p align="center">
   <img src="images/boxAttacks.png" alt="Image 1" width="250" />
