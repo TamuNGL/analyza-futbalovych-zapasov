@@ -275,11 +275,94 @@ V tejto časti sa snaíme predikovať výsledok zápasu pomocou rozhodovacieho s
 
 Výsledné predikcie na validačnej vzorke dosahujú úspešnosť približne 60-65%. Táto úspešnosť sa mierne zvýši, keď namiesto jednoduchého rozhodovacieho stromu použijeme metódu náhodných lesov. Náhodné lesy, kombinujú viacero rozhodovacích stromov, čo pomáha zlepšiť robustnosť modelu a znižuje riziko pretrénovania.
 
+## Analýza tímových štatistík pomocou K-Means zhlukovania
+
+### 1. Úvod
+Táto dokumentácia opisuje postup analýzy tímových štatistík a následného zhlukovania pomocou metódy K-Means. Zhlukovanie umožňuje identifikovať podobné tímy na základe ich štatistických charakteristík.
+
+### 2. Načítanie a predspracovanie dát
+1. **Načítanie dát:**
+    - Dáta sa načítajú vo formáte `.csv` pomocou knižnice `pandas`.
+2. **Odstránenie chýbajúcich hodnôt:**
+    - Vypočíta sa percento chýbajúcich hodnôt pre každý stĺpec.
+    - Stĺpce s viac ako 60 % chýbajúcich hodnôt sa odstránia.
+    - Zvyšné chýbajúce hodnoty v riadkoch sa odstránia.
+3. **Štatistiky tímov:**
+    - Percentuálne hodnoty (napr. držanie lopty) sa prevedú na číselné hodnoty.
+    - Chýbajúce hodnoty v stĺpcoch so štatistikami sa doplnia nulou.
+
+### 3. Agregácia tímových štatistík
+1. **Definícia funkcie:**
+    - Štatistiky sa agregujú podľa tímov (domáci a hostia) pomocou priemerných hodnôt.
+2. **Agregácia:**
+    - Štatistiky domácich a hostí sa agregujú samostatne.
+    - Výsledky sa následne spoja do jedného `DataFrame` so štatistikami tímov.
+
+### 4. Štandardizácia a zhlukovanie
+1. **Štandardizácia:**
+    - Vlastnosti tímov sa štandardizujú pomocou `StandardScaler`, aby mali rovnaký rozsah hodnôt.
+2. **K-Means zhlukovanie:**
+    - Použitá je metóda K-Means s počtom zhlukov `k=3`.
+    - Každému tímu je priradený jeden zo zhlukov na základe podobnosti vlastností.
+
+### 5. Výsledky zhlukovania
+1. **Priradenie zhlukov:**
+    - Každý tím je priradený k zhluku a zhluky sú označené popisnými názvami (napr. `Cluster 1`, `Cluster 2`, `Cluster 3`).
+2. **Priemerné štatistiky zhlukov:**
+    - Pre každý zhluk sa vypočítajú priemerné hodnoty vlastností.
+3. **Výpis výsledkov:**
+    - Zobrazia sa prvé tímy s priradenými zhlukmi a popisnými názvami.
+    - Súhrnné štatistiky pre jednotlivé zhluky.
+
+### 6. Vizualizácia pomocou PCA
+Na vizualizáciu zhlukov sa použije redukcia dimenzionality metódou PCA (Principal Component Analysis). Táto metóda umožňuje zobraziť dáta s vysokou dimenzionalitou v 2D alebo v 3D priestore.
+
+### 7. PCA s dvoma komponentmi (2D)
+1. **Inicializácia PCA:**
+    - Použijú sa dve hlavné komponenty (`n_components=2`).
+2. **Transformácia dát:**
+    - Štandardizované dáta sa transformujú pomocou PCA.
+3. **Pridanie PCA výsledkov do datasetu:**
+    - Hlavné komponenty (`PCA1` a `PCA2`) sa pridajú do `teams_df`.
+4. **Vizualizácia:**
+    - Výsledky PCA sa zobrazia v 2D priestore pomocou `plotly.express.scatter`.
+    - Zhluky tímov sú farebne odlíšené.
+    - Interaktívne prvky (hover) zobrazujú detailné informácie o tímoch.
+
+### 8. PCA s troma komponentmi (3D)
+1. **Inicializácia PCA:**
+    - Použijú sa tri hlavné komponenty (`n_components=3`).
+2. **Transformácia dát:**
+    - Štandardizované dáta sa transformujú na tri hlavné komponenty.
+3. **Pridanie PCA výsledkov do datasetu:**
+    - Hlavné komponenty (`PCA1`, `PCA2`, `PCA3`) sa pridajú do `teams_df`.
+4. **Vizualizácia:**
+    - Výsledky PCA sa zobrazia v 3D priestore pomocou `plotly.express.scatter_3d`.
+    - Zhluky tímov sú farebne odlíšené a zobrazené v 3D priestore.
+    - Interaktívne prvky (hover) obsahujú informácie o komponentoch PCA a tímových štatistikách.
+
+
 <p align="center">
  <img src="images/pca2D.jpg" alt="Image 1" width="400"/>
  <img src="images/pca3D.jpg" alt="Image 1" width="400"/>
 </p>
 
+### Interpretácia klasifikácie zhlukov
+
+### Cluster 1: Ofenzívne a dominantné tímy
+- **Silné stránky**: Najvyšší počet gólov doma (1,77), najviac streleckých pokusov (14,81), dlhšie držanie lopty (53,88% doma, 51,6% vonku).
+- **Štýl hry**: Ofenzívne zameranie, efektívne v streľbe a držaní lopty.
+- **Záver**: Tímy majú lepšiu kontrolu nad hrou a vynikajú v útoku.
+
+### Cluster 2: Obranné a slabšie tímy
+- **Slabé stránky**: Najnižší počet gólov doma (1,21) a vonku (0,98), najviac faulov (14,84 doma, 15,07 vonku), kratšie držanie lopty (49,36% doma, 46.63% vonku).
+- **Štýl hry**: Agresívna, no nepresná hra s defenzívnymi nedostatkami.
+- **Záver**: Tímy nemajú dobrú kontrolu nad hrou a sú slabšie v útoku.
+
+### Cluster 3: Vyvážené a disciplinované tímy
+- **Silné stránky**: Priemerný výkon v streleckých aj defenzívnych štatistikách, najnižší počet faulov a ofsajdov.
+- **Štýl hry**: Disciplinované a vyvážené hry bez extrémov.
+- **Záver**: Tímy sú vyvážené, neexcelujú v žiadnej oblasti.
 
 ## Záver
 
