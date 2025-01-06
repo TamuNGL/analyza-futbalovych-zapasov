@@ -235,6 +235,12 @@ Tímy, ktoré sú si najviac podobné, sa spájajú v nižších úrovniach dend
  <img src="images/dendrogram.jpg" alt="Image 1" width="800"/>
 </p>
 
+## Logistická regresia
+V tejto časti budeme robiť logistickú regresiu s penalizáciou na vybraných premenných a skúšať rôzne kombinácie. Budeme sa snažiť predikovať aký bol výsledok hry pomocou niektorých vybraných štatistík z hry. Pracujeme s 3059 riadkami. Vzhľadom na to že rozdiely v štatistikách z hier medzi remízou / výhrou alebo remízou / prehrou môžu byť veľmi nejasné zoberieme si iba riadky, ktoré sa neskončili remízou.
+
+Ponechanie stlpcov shots_on_goal a shots_off_goal nám dáva 98% presnosť pri natrénovanom modeli. Vzhľadom na to že modelujeme výsledok zápasu zo štatistík daného zápasu je toto veľmi silný indikátor výsledku ktorý skresľuje a zjednodušuje silu predikcie.
+Po odstránení týchto premenných dostávame pri zvolených vlastnostiach 72% presnosť.Zaujimave tiež je, že keby modelujeme iba na základe kurzov ( A_BET, H_BET, ktoré boli pred zápasom ) dostávame 67% presnosť. To môže indikovať úspešné predikcie bookmakerov ako aj ľudí čo si vsadia pred zápasom. Vzhľadom na to že A_BET a H_BET sú korelované s historickými výsledkamk (či už podobné predikčné modely ktoré využívajú bookmakery ma úpravu a incialne nastavnienie kurzov alebo vklady ľudí ktorý vychadzájú najma z historických výsledkov) bude dobré tieto stlpce odstrániť a pracovať iba so stlpcami ktoré vyjadrujú štatistiky z danej hry.
+
 ## Testovanie hypotéz
 
 V tejto časti testujeme hypotézu, či existuje nejaká signifikantná závislosť medzi tým, kto vedie v prvých 15 minútach hry a finálnym skóre zápasu.
